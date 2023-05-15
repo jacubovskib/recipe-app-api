@@ -20,7 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ["email", "password", "name"]
         extra_kwargs = {
             "password": {"write_only": True, "min_length": 5}
-            }
+        }
 
     def create(self, validated_data):
         """Create and return a user with encrypted password."""
